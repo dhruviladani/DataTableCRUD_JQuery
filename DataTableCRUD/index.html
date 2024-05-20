@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataTable with CRUD</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+    
+    
+</head>
+<body>
+    <div class="container mt-5">
+        <table id="dataTable" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <!-- Table headers will be inserted here by DataTable -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table data will be inserted here by DataTable -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal form for adding/updating records -->
+    <div id="modalFormContent" style="display:none;">
+        <div class="form-group">
+            <label for="registrationMainId">Registration ID:</label>
+            <input type="text" class="form-control" id="registration_main_id" readonly>
+        </div>
+        <div class="form-group">
+            <label for="userCode">User Code:</label>
+            <input type="text" class="form-control" id="user_code">
+        </div>
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" class="form-control" id="first_name">
+        </div>
+        <div class="form-group">
+            <label for="middleName">Middle Name:</label>
+            <input type="text" class="form-control" id="middle_name">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" class="form-control" id="last_name">
+        </div>
+        <div class="form-group" id="phoneNumberCollapse">
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" class="form-control" id="phone_number">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email">
+        </div>
+        <div class="form-group">
+            <label for="createdTime">Created Time:</label>
+            <input type="text" class="form-control" id="created_time">
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
