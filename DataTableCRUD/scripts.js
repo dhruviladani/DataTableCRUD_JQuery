@@ -98,7 +98,7 @@ $(document).ready(function () {
             cancelButtonText: "Cancel",
             showLoaderOnConfirm: true,
             didOpen: function () {
-                var phoneInput = Swal.getPopup().querySelector("#phone_number");
+                var phoneInput = Swal.getPopup().querySelector("#phoneNumber");
                 var iti = intlTelInput(phoneInput, {
                     initialCountry: "auto",
                     geoIpLookup: function (callback) {
@@ -110,32 +110,32 @@ $(document).ready(function () {
                     utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
                 });
 
-                Swal.getPopup().querySelector("#registration_main_id").value = rowData.registration_main_id;
-                Swal.getPopup().querySelector("#user_code").value = rowData.user_code;
-                Swal.getPopup().querySelector("#first_name").value = rowData.first_name;
-                Swal.getPopup().querySelector("#middle_name").value = rowData.middle_name;
-                Swal.getPopup().querySelector("#last_name").value = rowData.last_name;
+                Swal.getPopup().querySelector("#registrationMainId").value = rowData.registration_main_id;
+                Swal.getPopup().querySelector("#userCode").value = rowData.user_code;
+                Swal.getPopup().querySelector("#firstName").value = rowData.first_name;
+                Swal.getPopup().querySelector("#middleName").value = rowData.middle_name;
+                Swal.getPopup().querySelector("#lastName").value = rowData.last_name;
                 phoneInput.value = rowData.phone_number;
                 iti.setNumber(rowData.phone_number);
                 Swal.getPopup().querySelector("#email").value = rowData.email;
-                Swal.getPopup().querySelector("#created_time").value = rowData.created_time;
+                Swal.getPopup().querySelector("#createdTime").value = rowData.created_time;
 
                 $('#phoneNumberCollapse').collapse('show'); // Show the collapsible field
             },
             preConfirm: function () {
-                var phoneInput = Swal.getPopup().querySelector("#phone_number");
+                var phoneInput = Swal.getPopup().querySelector("#phoneNumber");
                 var iti = intlTelInputGlobals.getInstance(phoneInput);
 
                 var updatedData = {
                     registration_main_id: rowData.registration_main_id,
-                    user_code: Swal.getPopup().querySelector("#user_code").value,
-                    first_name: Swal.getPopup().querySelector("#first_name").value,
-                    middle_name: Swal.getPopup().querySelector("#middle_name").value,
-                    last_name: Swal.getPopup().querySelector("#last_name").value,
+                    user_code: Swal.getPopup().querySelector("#userCode").value,
+                    first_name: Swal.getPopup().querySelector("#firstName").value,
+                    middle_name: Swal.getPopup().querySelector("#middleName").value,
+                    last_name: Swal.getPopup().querySelector("#lastName").value,
                     phone_number: iti.getNumber(),
                     phone_country_code: iti.getSelectedCountryData().dialCode,
                     email: Swal.getPopup().querySelector("#email").value,
-                    created_time: Swal.getPopup().querySelector("#created_time").value
+                    created_time: Swal.getPopup().querySelector("#createdTime").value
                 };
 
                 return $.ajax({
@@ -173,7 +173,7 @@ $(document).ready(function () {
             cancelButtonText: "Cancel",
             showLoaderOnConfirm: true,
             didOpen: function () {
-                var phoneInput = Swal.getPopup().querySelector("#phone_number");
+                var phoneInput = Swal.getPopup().querySelector("#phoneNumber");
                 var iti = intlTelInput(phoneInput, {
                     initialCountry: "auto",
                     geoIpLookup: function (callback) {
@@ -188,16 +188,16 @@ $(document).ready(function () {
                 $('#phoneNumberCollapse').collapse('show'); // Show the collapsible field
             },
             preConfirm: function () {
-                var phoneInput = Swal.getPopup().querySelector("#phone_number");
+                var phoneInput = Swal.getPopup().querySelector("#phoneNumber");
                 var iti = intlTelInputGlobals.getInstance(phoneInput);
-                var user_code = Swal.getPopup().querySelector("#user_code").value;
-                var first_name = Swal.getPopup().querySelector("#first_name").value;
-                var middle_name = Swal.getPopup().querySelector("#middle_name").value;
-                var last_name = Swal.getPopup().querySelector("#last_name").value;
+                var user_code = Swal.getPopup().querySelector("#userCode").value;
+                var first_name = Swal.getPopup().querySelector("#firstName").value;
+                var middle_name = Swal.getPopup().querySelector("#middleName").value;
+                var last_name = Swal.getPopup().querySelector("#lastName").value;
                 var phone_number = iti.getNumber();
                 var phone_country_code = iti.getSelectedCountryData().dialCode;
                 var email = Swal.getPopup().querySelector("#email").value;
-                var created_time = Swal.getPopup().querySelector("#created_time").value;
+                var created_time = Swal.getPopup().querySelector("#createdTime").value;
 
                 if (!user_code || !first_name || !last_name || !email || !created_time) {
                     Swal.showValidationMessage("Please fill in all required fields.");
